@@ -34,3 +34,12 @@ resource "aws_instance" "tf-ec2-2" {
 resource "aws_s3_bucket" "tf-s3" {
   bucket = "azat-tf-test-bucket-addwhateveryouwant"
 }
+
+#  
+resource "aws_s3_object" "bootstrap" {
+  bucket = aws_s3_bucket.tf-s3.bucket # comes from terraform console
+  key    = "cloud"
+  acl    = "private"  # or can be "public-read"
+  source = "cloud"
+  etag = filemd5("cloud")  
+}
