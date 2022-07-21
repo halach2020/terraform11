@@ -33,3 +33,8 @@ variable "ec2_ami" {
 
 variable "tags" {
 }
+
+
+variable "num_of_buckets" {
+  default = 0
+}

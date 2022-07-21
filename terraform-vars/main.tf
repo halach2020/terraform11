@@ -21,7 +21,8 @@ resource "aws_instance" "tf-ec2" {
 }
 
 resource "aws_s3_bucket" "tf-s3" {
-  bucket = var.s3_bucket_name
+  bucket = "${var.s3_bucket_name}-${count.index}"
+  count = var.num_of_buckets != 0 ? var.num_of_buckets : 3 # if num_of_buckets is not equal to zero then its value is num_of_buckets else its value is 3
 }
 
 output "tf-example-public_ip" {
@@ -33,7 +34,7 @@ output "tf_example_private_ip" {
 }
 
 output "tf-example-s3" {
-  value = aws_s3_bucket.tf-s3 # [for o in var.list : o.id]  using the splat expression it will be  var.list[*].id
+  value = aws_s3_bucket.tf-s3[*] # [for o in var.list : o.id]  using the splat expression it will be  var.list[*].id
 }
 
 # unset ENV_VAR
