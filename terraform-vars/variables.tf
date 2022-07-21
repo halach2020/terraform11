@@ -38,3 +38,9 @@ variable "tags" {
 variable "num_of_buckets" {
   default = 0
 }
+
+variable "users" {
+  default = ["santino", "michael", "fredo"]
+  type = list
+}
+
