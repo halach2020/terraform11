@@ -40,9 +40,14 @@ output "tf-example-s3" {
 # terraform plan -var-file="testing.tfvars"
 
 
-locals {
-  mytag = "terraform-is-cool"
-}
+# locals {
+#   mytag = "terraform-is-cool"
+# }
+
+#Input variables are like function arguments.
+#Output values are like function return values.
+#Local values are like a function's temporary local variables.
+
 
 resource "aws_s3_bucket" "tf-s3-2" {
   bucket = var.s3_bucket_name2

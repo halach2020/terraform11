@@ -30,3 +30,6 @@ variable "ec2_ami" {
     error_message = "The image_id value must be a valid AMI id, starting with \"ami-\"."
   }
 }
+
+variable "tags" {
+}
