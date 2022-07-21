@@ -32,7 +32,7 @@ resource "aws_instance" "tf-ec2-2" {
 }
 
 resource "aws_s3_bucket" "tf-s3" {
-  bucket = "azat-tf-test-bucket-addwhateveryouwant"
+  bucket = "azat-tf-test-bucket-add-new-name"
 }
 
 #  
@@ -51,3 +51,6 @@ output "tf_example_public_ip" {
 output "tf_example_s3_meta" {
   value = aws_s3_bucket.tf-s3.region
 }
+
+# https://www.terraform.io/cli/commands/refresh 
+# http://man.hubwiz.com/docset/Terraform.docset/Contents/Resources/Documents/docs/commands/apply.html#refresh-true
