@@ -18,6 +18,9 @@ variable "s3_bucket_name" {
   # default = "azat-s3-bucket-variable-addwhateveryouwant"
 }
 
+variable "s3_bucket_name2" {
+}
+
 variable "ec2_ami" {
   type        = string
   description = "The id of the machine image (AMI) to use for the server."

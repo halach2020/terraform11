@@ -38,3 +38,15 @@ output "tf-example-s3" {
 
 # unset ENV_VAR
 # terraform plan -var-file="testing.tfvars"
+
+
+locals {
+  mytag = "terraform-is-cool"
+}
+
+resource "aws_s3_bucket" "tf-s3-2" {
+  bucket = var.s3_bucket_name2
+  tags = {
+    Name = "${local.mytag}-come from locals"
+  }
+}
